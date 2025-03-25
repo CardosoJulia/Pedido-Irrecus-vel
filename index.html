@@ -2,15 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Feliz Dia Dos Namorados</title>
+
+    <style>
+        body{
+            background-color: hsla(305, 75%, 70%, 0.986);
+            text-align: center; 
+            justify-content: center;
+            margin-top: 25%;
+        }
+
+        
+        #sim{
+            height: 40px;
+            width: 60px;
+            background-color: rgb(29, 97, 26);
+            
+            border-radius: 10px;
+            color: #ffffff;
+            margin-left: -50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+        }
+        #nao{
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: #fa2f2f;
+            
+            border-radius: 10px;
+            color: hwb(0 100% 0%);
+            margin-left: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .painel{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            
+
+        }
+
+    </style>
+
 </head>
 <body>
-    <div class="botao">
 
-        <button>Sim</button>
-        <Button>Não</Button>
+    <div class="painel">
+        <h1> Feliz Dia dos Namorados</h1>
+
+        
+
+        <h2>Aceita namorar comigo? </h2>
+        
+
+        <a href="foto.jpeg"><button id="sim" > Sim! </button></a>
+        <button onmouseover="fuja()" id="nao"> Não! </button>
+        
     </div>
+
+    <script>
+        function fuja(){
+            var botaoNao = document.getElementById("nao")
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+
+
+        }
+    </script>
+
+
+
+    
 </body>
 </html>
